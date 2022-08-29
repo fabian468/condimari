@@ -1,0 +1,43 @@
+body {
+    background-color: #ccc;
+}
+
+.formBusqueda {
+    display: flex;
+    justify-content: space-around;
+    position: sticky;
+    top: 2px;
+    padding: 15px;
+    width: 60%;
+    margin: auto;
+
+}
+
+.contenedorFlex {
+    width: 100%;
+}
+
+
+.flex {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: space-around;
+    background-color: #800080;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.flex div {
+    text-align: center;
+    color: #fff;
+
+}
+
+#equis {
+    cursor: pointer;
+    color: #fff;
+    font-weight: 700;
+}

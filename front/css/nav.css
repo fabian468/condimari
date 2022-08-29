@@ -1,0 +1,44 @@
+header {
+    width: 100%;
+    height: auto;
+    background-color: #808080;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titulo {
+    color: #fff;
+    margin-left: 40px;
+}
+
+.paginas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-right: 40px;
+}
+
+.paginas li {
+    list-style: none;
+}
+
+.paginas li a {
+    text-decoration: none;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 41px;
+    color: #000;
+    border: 1px solid #000;
+    font-weight: 600;
+}
+
+.paginas li a:hover {
+    background-color: #800080;
+    color: #fff;
+}
+
+.animate__animated.animate__fadeInDown {
+    --animate-duration: 2s;
+}

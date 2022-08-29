@@ -1,0 +1,48 @@
+.contenedor_productos {
+    display: flex;
+    flex-direction: column;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    display: none;
+}
+
+.contenedor_notiyproduct {
+    display: flex;
+    gap: 10px;
+}
+
+.noticias {
+    width: 25%;
+    height: auto;
+    text-align: justify;
+}
+
+.productos {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+
+
+}
+
+.contenedor_p {
+    width: 200px;
+    height: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px 10px 5px 10px;
+    text-align: center;
+}
+
+#comprar {
+    padding: 3px;
+    outline: none;
+    cursor: pointer;
+    background-color: #008f39;
+    color: #fff;
+    font-weight: 500;
+}
