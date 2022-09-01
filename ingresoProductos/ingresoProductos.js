@@ -2,20 +2,22 @@
 var agregar = document.getElementById('agregar')
 var productos = []
 
+
 function mostrarDatos() {
     fetch("http://localhost:3000/app/productos/mostrar")
         .then(data => data.json())
         .then(data => {
             const datos = data.data
+
             datos.map((e) => {
 
                 productos += `
         <div class="flex" >
-            <div class="id">Id: ${e.id} </div>
+            <div class="id">Id: ${e._id} </div>
             <div class="nombre ">Nombre: ${e.nombre} </div>
             <div class="descripcion">descripión: ${e.descripcion}</div>
             <div class="precio">Precio: ${e.precio}</div>
-            <span id="equis" onClick="CapturaId()" >X</span>
+            <span id="equis" onClick="eliminarProducto(${e._id}) " >X</span>
         </div>`
             })
             document.getElementById("contenedorFlex").innerHTML = productos
@@ -24,14 +26,13 @@ function mostrarDatos() {
 
 
 // agregar productos
-agregar.addEventListener('click', (e) => {
-
+agregar.addEventListener('click', () => {
     let id = document.getElementById('id')
     var nombre = document.getElementById('nombre')
     var descripcion = document.getElementById('descripcion')
     var precio = document.getElementById('precio')
     var datos = {
-        id: id.value,
+        _id: id.value,
         nombre: nombre.value,
         descripcion: descripcion.value,
         precio: precio.value
@@ -47,21 +48,20 @@ agregar.addEventListener('click', (e) => {
             document.getElementById("guardado").innerHTML = 'Datos guardados'
         })
 
-    mostrarDatos()
-
 })
 
 
-
 // mostrar productos
-
-
 mostrarDatos()
 
 
 
-function CapturaId() {
 
-    let id = document.querySelector('.id')
-    console.log(id)
+function eliminarProducto(id) {
+    fetch("http://localhost:3000/app/productos/eliminar/" + id, {
+        method: 'DELETE'
+    })
+        .then(res => res.text())
+        .then(res => alert(res))
+
 }
