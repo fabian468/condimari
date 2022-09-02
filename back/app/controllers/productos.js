@@ -7,9 +7,9 @@ const modelo = require('../model/productos')
 const productos = {
     agregar: async (req, res) => {
 
-        const { _id, nombre, descripcion, precio } = req.body;
+        const { _id, nombre, descripcion, precio, imagen } = req.body;
         await modelo.create({
-            _id, nombre, descripcion, precio
+            _id, nombre, descripcion, precio, imagen
         })
     },
     mostrar: (req, res) => {
@@ -33,6 +33,18 @@ const productos = {
             }
             return res.send("El producto: " + productoEliminado.nombre + " fue eliminado")
         })
+    },
+    subirImagen: (req, res) => {
+        var projectId = req.params._id
+        var filename = ""
+
+        if (req.files) {
+            var filePath = req.files.imagen.path
+            var fileSplit = filePath.split("\\")
+            var filename = fileSplit[1]
+            var extSplit = filename.split('\.')
+            var fileExt = extSplit[1]
+        }
     }
 
 }

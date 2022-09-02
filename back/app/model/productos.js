@@ -12,6 +12,9 @@ const ProductosSchema = new mongoose.Schema({
     },
     precio: {
         type: Number
+    },
+    imagen: {
+        String
     }
 },
     {
