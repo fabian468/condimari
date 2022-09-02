@@ -10,7 +10,7 @@ fetch(url)
             productos += `<div class="contenedor_p">
                     <p><b>Nombre</b>: ${e.nombre} </p>
                     <p><b>Descripción</b>: ${e.descripcion}</p>
-                    <p><b>Precio</b>:${e.precio} </p>
+                    <p><b>Precio</b>:$${e.precio} </p>
                     <button id="comprar">Comprar</button>
                 </div>`
         })

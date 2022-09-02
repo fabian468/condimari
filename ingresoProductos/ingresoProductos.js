@@ -1,6 +1,8 @@
 
 var agregar = document.getElementById('agregar')
 var productos = []
+var ides = []
+
 
 
 function mostrarDatos() {
@@ -8,19 +10,29 @@ function mostrarDatos() {
         .then(data => data.json())
         .then(data => {
             const datos = data.data
-
+            var ultimoId = 0
             datos.map((e) => {
+                //id automatico
+                ides += e._id + " "
+                idesarray = ides.split(" ")
+                ultimoId = idesarray.at(-2)
 
                 productos += `
-        <div class="flex" >
+        <form class="flex" >
             <div class="id">Id: ${e._id} </div>
             <div class="nombre ">Nombre: ${e.nombre} </div>
             <div class="descripcion">descripión: ${e.descripcion}</div>
             <div class="precio">Precio: ${e.precio}</div>
-            <span id="equis" onClick="eliminarProducto(${e._id}) " >X</span>
-        </div>`
+            <button id="equis" onClick="eliminarProducto(${e._id})" >Eliminar</button>
+        </form>`
             })
             document.getElementById("contenedorFlex").innerHTML = productos
+            var calculoId = parseInt(ultimoId) + 1
+            var ids = document.getElementById('id')
+            ids.innerHTML = "<strong>Id:</strong> " + calculoId
+            ids.value = calculoId
+
+
         })
 }
 
@@ -62,6 +74,15 @@ function eliminarProducto(id) {
         method: 'DELETE'
     })
         .then(res => res.text())
-        .then(res => alert(res))
+        .then(res => console.log(res))
 
 }
+
+
+
+// //agregar id automatico
+// window.onload = function () {
+//     let ides = 1
+//     document.getElementById('id').value = ides + 1
+
+// }

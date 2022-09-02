@@ -7,7 +7,7 @@ body {
     justify-content: space-around;
     position: sticky;
     top: 2px;
-    padding: 15px;
+    padding: 10px;
     width: 60%;
     margin: auto;
 
@@ -17,6 +17,11 @@ body {
     width: 100%;
 }
 
+
+#agregar {
+    border-radius: 10px;
+    cursor: pointer;
+}
 
 .flex {
     width: 60%;
@@ -38,6 +43,7 @@ body {
 
 #equis {
     cursor: pointer;
-    color: #fff;
+    color: #000;
     font-weight: 700;
+    background-color: #f00;
 }
