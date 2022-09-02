@@ -6,6 +6,6 @@ creado con:
 -node.js
 -express
 -mongoose
--javascript
+-javascript a traves de metodos fetch
 -css
 -html
