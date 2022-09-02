@@ -8,7 +8,7 @@ const productos = {
     agregar: async (req, res) => {
 
         const { _id, nombre, descripcion, precio } = req.body;
-        const detalleRespuesta = await modelo.create({
+        await modelo.create({
             _id, nombre, descripcion, precio
         })
     },
